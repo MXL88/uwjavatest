@@ -96,6 +96,9 @@ public class Person implements Comparable<Person> {
     }
   }
 
+  public int count() {
+    return 0;
+  }
   public static List<Person> getNewardFamily() {
     Person p1 = new Person("Ted", 41, 250000);
     Person p2 = new Person("Charlotte", 43, 150000);
