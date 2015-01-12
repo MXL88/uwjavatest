@@ -74,6 +74,7 @@ public class TestPerson {
     assertEquals(new Person("Michael", 22, 10000), people.get(1));
     assertEquals(new Person("Ted", 41, 250000), people.get(2));
     assertEquals(new Person("Charlotte", 43, 150000), people.get(3));
+
   }
 
   @Test
