@@ -3,6 +3,7 @@ package com.tedneward.example;
 import java.beans.*;
 import java.util.*;
 import java.io.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class Person implements Comparable<Person> {
@@ -11,6 +12,15 @@ public class Person implements Comparable<Person> {
   private double salary;
   private String ssn;
   private boolean propertyChangeFired = false;
+  static private final AtomicInteger count = new AtomicInteger();
+
+  {
+    count.getAndIncrement();
+  }
+
+  static public int count() {
+    return count.get();
+  }
 
   public Person() {
     this("", 0, 0.0d);
@@ -96,9 +106,6 @@ public class Person implements Comparable<Person> {
     }
   }
 
-  public int count() {
-    return 0;
-  }
   public static List<Person> getNewardFamily() {
     Person p1 = new Person("Ted", 41, 250000);
     Person p2 = new Person("Charlotte", 43, 150000);
@@ -110,7 +117,6 @@ public class Person implements Comparable<Person> {
     family.add(p2);
     family.add(p3);
     family.add(p4);
-
 
     return family;
   }

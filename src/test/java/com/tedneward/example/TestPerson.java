@@ -63,6 +63,7 @@ public class TestPerson {
     
     assertFalse(p1.equals(null));
     assertFalse(p1.equals(new Integer(27)));
+
   }
 
   @Test
@@ -86,6 +87,8 @@ public class TestPerson {
     assertEquals(new Person("Charlotte", 43, 150000), people.get(1));
     assertEquals(new Person("Michael", 22, 10000), people.get(2));
     assertEquals(new Person("Matthew", 15, 0), people.get(3));
+
+
   }
   
   @Test
@@ -110,5 +113,8 @@ public class TestPerson {
     assertEquals(false, ted.getPropertyChangeFired());
     ted.setSSN("012-34-5678");
     assertEquals(true, ted.getPropertyChangeFired());
+
+
+
   }
 }
